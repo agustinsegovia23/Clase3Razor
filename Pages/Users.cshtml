@@ -1,0 +1,38 @@
+@page 
+
+@{  
+   var users = new List<Users>();
+    var user1 = new Users(1, "Juan Carlos", "Pereyra", 35);
+    var user2 = new Users(2, "Eduardo Fabian", "Sosa", 29);
+    var user3 = new Users(3, "Luciano", "Ramirez", 54);
+    users.Add(user1);
+    users.Add(user2);
+    users.Add(user3);
+
+}
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"># Registro</th>
+                    <th scope="col">Nombre</th>
+                    <th class="col">Apellido</th>
+                    <th class="col">Edad</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach(var user in users){
+                    <tr>
+                            <th>#@user.Id</th>
+                            <td>@user.Name</td>
+                            <td>@user.Surname</td>
+                            <td>@user.Age</td>
+                    </tr>        
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
